@@ -1,0 +1,20 @@
+Network7(100)  Weak Cookie
+
+Open pcap file with wireshark.
+Use Wireshark Statistics>>>Protocol Hierarchy
+We see that all the traffic are using http protocol.
+Now we use Display Filter to find useful packets for the flag.
+use “http contains basectf”
+Then we found the interesting packet for the problem.
+The frame number is 57.
+
+After analysing the frame. We found that there is base64 encoded string which might be the flag in http Set-Cookie header.
+Take a look. 
+
+Set-Cookie : 3=QkNURntjb29raWVfaXNfd2Vha19lbmNyeXB0aW9ufQ%3D%3D
+
+%3d is equal sign.
+So, QkNURntjb29raWVfaXNfd2Vha19lbmNyeXB0aW9ufQ== is the base64 encoded version of the flag.
+
+After decoding it,the flag is  
+				BCTF{cookie_is_weak_encryption}
