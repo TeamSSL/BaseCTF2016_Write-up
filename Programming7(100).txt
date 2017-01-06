@@ -1,0 +1,56 @@
+Programming7(100) Write-up
+
+Code
+--------------------------------
+
+#include 
+
+int max(int num1, int num2);
+
+int main () { 
+
+int a = 40000778;
+int b = 48406343;	
+int c = 400007783;
+int d = 300007784;
+int e = 300007785;
+int ret;
+
+ret = max(a, b);
+
+printf( "BCTF{%d}\n", ret );
+
+
+return 0;
+}
+
+int maxn(int num1, int num2) {
+
+int result;
+
+if (num1 > num2)
+result = num1;
+else
+result = num2;
+
+return result; 
+}
+
+--------------------------------
+
+	This is a C program.
+	"ret" variable is declare by max() function.
+	The max function is given below.
+	It returns the greater value.
+	So "ret" variable gets the b value "48405343".
+	This is the hex encoded value.
+
+	Decoded value is "H@cC".
+	And print ret with printf function.
+
+	And u got the flag.
+
+	Flag is
+	BCTF{H@cC}
+
+	

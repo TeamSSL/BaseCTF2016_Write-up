@@ -1,0 +1,44 @@
+Programming5 (200) Write-up
+
+Code
+--------------------------------
+
+I have eval javascirpt code. I can't find the corret flag. Try to work the program. 
+
+https://10.0.0.2/files/c6e4c447cfbed8e0c6de7379e156c421.html.zip
+
+--------------------------------
+
+	Download the given file.
+	Unzip the file.
+	There is the html file.
+	Open it.
+	View page source.
+	We see the hexa encoded code.
+	We can see the decrypted code using Javascript Deobfuscator addon.
+
+	Now we see the code like that
+	--------------------------------
+
+		var k = "424354467b4a6176615363726970";
+	var z = "745f4576406c5f633064655f664f756e647d";
+	var x = k + z,
+	  bytes = [],
+	  y;
+	for (var i = 0; i < x.length - 1; i += 2) {
+	  bytes.push(parseInt(x.substr(i, 2), 16));
+	}
+	y = String.fromCharCode.apply(String, bytes);
+	console.log(k);
+	--------------------------------
+
+	There is two hexa encoded variables.
+	Decode them.
+	The first variable is "BCTF{JavaScrip".
+	The second variable is "t_Ev@l_c0de_fOund}".
+
+	The flag is concating two variables.
+
+	The flag is 
+	
+	BCTF{JavaScript_Ev@l_c0de_fOund}

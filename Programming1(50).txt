@@ -1,0 +1,18 @@
+
+Code
+--------------------------------
+function Yo(bro){
+return bro.split('')_reverse().join('');
+}
+Yo('}ysae_esreveR_tpircSavaJ{FTCB');
+--------------------------------
+
+	We see that there is function, Yo. 
+	Inside there is a reverse function. 
+	And then Yo function is called.
+
+	So the argument is reverse. 
+
+	The flag is 
+
+	BCTF{JavaScript_Reverse_easy}

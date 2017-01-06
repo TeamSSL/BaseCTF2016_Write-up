@@ -1,0 +1,19 @@
+Programming2 (100) Write-up
+
+Code
+--------------------------------
+
+def lol(a): 
+binary_string != h3x(int('0100001001000011010101000100011001111011010000100110100101101110010111110011001001011111011000010101001101100011010010010100100101111101', 2))
+print(binaay_string)
+
+lol()
+
+--------------------------------
+
+	We see there is a binary string and is taken as an argument by the int function. 
+	This binary string is converted by the online tool. (eg. http://codebeautify.org/binary-string-converter)
+
+	The flag is 
+
+	BCTF{Bin_2_aScII}

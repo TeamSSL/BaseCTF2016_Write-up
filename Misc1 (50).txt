@@ -1,0 +1,14 @@
+Misc1 (50) Write-up
+
+	Download the file and unzip it.
+
+	U see the folder with over 3000 blank text file.
+	Locate to that file in terminal.
+	And list all the file with "ls -al".
+	Find the file with size greater than 0.
+
+	Once u file it, open it.
+	U see the flag.
+
+	Flag is 
+	BCTF{Easy_To_find_me_hacker}
