@@ -1,0 +1,6 @@
+In this pcap, we found some telnet protocol traffic.Flag format is BCTF{} . So we should filter like this.
+
+telnet contains "BCTF\{"
+
+Boom! ..
+Flag : BCTF{easy_to_find}
