@@ -1,0 +1,60 @@
+Network2(200) Write-up
+
+A cisco configuration file is given.
+We need to find the enable secret password.
+The secret password is Type 5. So, bruteforcing the password is too long.
+We need to recover enable password from Type 7.
+Type 7 password can be decrypt using online tool.
+
+In the given file, we see four type 7 passwords.
+
+username admin password 7 08740C4C0A0D0328130F010D24
+username guest password 7 08740C4C0A0D0328151E09173E
+username syst3m password 7 08740C4C0A0D032801121F107926
+username user password 7 08740C4C0A0D032807180916
+
+Decrypt the password using Cisco type 7 password decryptor.
+
+Results are bctf_admin
+			bctf_guest
+			bctf_syst3m
+			bctf_user
+
+Now, see the pattern.
+All the passwords start with bctf.
+
+Now take a look at enable password. 
+
+enable secret 5 $1$mERr$vPXNr8IoUKDWCPl9KDDFq1
+
+5 is type 5 password.
+1 indicates that the password is using md5 hash.
+meRr is salt.
+vPXNr8IoUKDWCPl9KDDFq1 is hash digest of the password using salt.
+
+Hashing cannot be decrypted.
+But we can find the password of plaintext by comparing the md5 hash.
+Now we are using openssl command line tool to find the plaint text password.
+
+root@kali:~# openssl passwd -1 -salt meRr "plaintext_password"
+
+Take a look at the question.There is a hint.
+
+After thinking a lot,i correctly guest the plainttext passowrd.
+
+"bctf_secret"
+
+bctf is obtained from cisco type 5 password.
+secret is given from question.
+
+Now,using openssl tool, we find the correct hash.
+
+root@kali:~# openssl passwd -1 -salt meRr "bctf_secret"
+vPXNr8IoUKDWCPl9KDDFq1
+
+See.two hashes are the same.
+Therefore, we can assume that the correct flage is found.
+
+The flag is 
+	BCTF{bctf_secret}
+
