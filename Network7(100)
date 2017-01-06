@@ -1,0 +1,14 @@
+Network7(100) POP
+
+Open pcap file with wireshark.
+Use Wireshark Statistics>>>Protocol Hierarchy
+
+There is POP traffic and this protocol is interesting.
+Use Display Filter “POP” and analyse frames carefully.
+
+Ohh…. There is a flag in frame no 38.
+38	6.383995	192.168.0.9	149.56.204.150	49211	110	vps7.worldwidemyanmar.com	POP	C: PASS {c0mbine_g3t_fl@g}	79
+
+Easy. The flag is 
+			BCTF{c0mbine_g3t_fl@g}
+
