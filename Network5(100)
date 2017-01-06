@@ -1,0 +1,19 @@
+Confusing Traffic	(Network 5)
+
+In this pcap, we found some http traffic. So, we should check and filter.
+
+http filter .
+ 
+In this ctf, flag format is BCTF{}.
+So let's filter “http contains “BCTF””.
+Wireshark show 5 packets according to this filter.
+
+Ok , let's analyse this 5 packet with tshark.
+
+tshark -Y "http contains BCTF && frame.number == 4193 " -T pdml -r 100\(1\).pcap | grep "\{*\}"
+
+tshark -Y "http contains BCTF && frame.number == 2910 " -T pdml -r 100\(1\).pcap | grep "\{*\}"
+
+replace packet's number in frame.number …
+
+Finally we found the flag in frame number 3112: BCTF{another_combination_to_get_flag}
