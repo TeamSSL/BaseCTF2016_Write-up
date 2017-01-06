@@ -1,0 +1,11 @@
+Find the flag in ftp (network 3)
+
+In this pcap , we should filter ftp traffic and check because of question.
+
+ftp filter.
+
+At the end of packet capture file . We found that “RETR flag.txt” info and transfering is complete.
+
+So extract this flag.txt from capture file and read this file.
+
+We found the flag: BCTF{let_her_go}
