@@ -1,0 +1,31 @@
+Can you extract
+
+We download this file and extract it. We found zip file again.
+
+And then extract this zip file . flag.docx file is found.
+
+analyse this flag.docx with binwalk.
+
+binwalk flag.docx 
+
+We found some zip archive file .
+
+unzip flag.docx 
+
+some folder are extracted. 
+
+checking around in this extracted folders. We found network_forensics zip file in word\media.
+
+extract this file .
+
+found data pcap file.
+
+analysing this pcap file . Some http traffic found .
+So extract http from this pcap file .
+
+dWuFWppz file appear.
+In this file, some hex code exist.
+
+once hex to ascii decoding and  base64 double decoding .
+
+We found flag: BCTF{signature_is_easy_or_not}
